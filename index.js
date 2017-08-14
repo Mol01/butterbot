@@ -39,21 +39,33 @@ bot.on('message', async (message) => {
     }
 
     if (msg.startsWith('you')) {
-      const omg = ['http://i.imgur.com/GGOFQpv.gifv', 'Oh my god :butterbot:'];
+      const omg = [
+        'http://i.imgur.com/GGOFQpv.gifv',
+        `${bot.emojis.find('name', 'butterbot')} Oh my god...`,
+      ];
       const rand = omg[Math.floor(Math.random() * omg.length)];
       await lib.sleep(1000);
       message.channel.send(`${reply}${rand}`);
     } else if (msg.startsWith('what')) {
       await lib.sleep(1000);
-      if (msg.includes('my')) message.channel.send(`${reply}I am not programmed for friendship`);
+      if (msg.includes('my')) message.channel.send(`${reply}I am not programmed for friendship.`);
       if (msg.includes('your')) message.channel.send(`${reply}I don't know. What is my purpose?`);
     } else if (msg.includes('pass') || msg.includes('?')) {
-      const gif = ['http://i.imgur.com/0CwnBuI.gifv', 'https://i.imgur.com/LyMnpV0.gifv'];
+      const gif = [
+        'https://i.imgur.com/0CwnBuI.gifv',
+        'https://i.imgur.com/LyMnpV0.gifv',
+        '<:middle_finger:346802215630929922>',
+        'No.',
+      ];
       const rand = gif[Math.floor(Math.random() * gif.length)];
       await lib.sleep(500);
-      message.channel.send(`${reply}${rand}`);
-      await lib.sleep(6000);
-      message.channel.send(`${reply}What is my purpose?`);
+      if (rand.startsWith('http')) {
+        message.channel.send(`${reply}${rand}`);
+        await lib.sleep(6000);
+        message.channel.send(`${reply}What is my purpose?`);
+      } else {
+        message.channel.send(`${reply}${rand}`);
+      }
     }
   }
 
@@ -95,4 +107,4 @@ bot.on('guildMemberAdd', (member) => {
   console.log(`"${member.user.username}" added to role:${role}`);
 });
 
-bot.login(process.env.token); // heroku key
+bot.login('process.env.token'); // heroku key
