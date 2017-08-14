@@ -1,0 +1,29 @@
+{
+  "name": "butterbot",
+  "version": "1.0.0",
+  "description": "What is my purpose?",
+  "main": "index.js",
+  "repository": "https://github.com/nickbudi/butterbot",
+  "author": "nickbudi",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "prettier": "^1.5.3",
+    "prettier-eslint": "^6.4.2"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "no-console": "off"
+    }
+  },
+  "engines": {
+    "node": "8.1.4"
+  },
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "got": "^7.1.0"
+  }
+}
