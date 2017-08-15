@@ -107,4 +107,4 @@ bot.on('guildMemberAdd', (member) => {
   console.log(`"${member.user.username}" added to role:${role}`);
 });
 
-bot.login('process.env.token'); // heroku key
+bot.login(process.env.token); // heroku key
