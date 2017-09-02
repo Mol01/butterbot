@@ -50,7 +50,7 @@ bot.on('message', async (message) => {
       await lib.sleep(1000);
       if (msg.includes('my')) message.channel.send(`${reply}I am not programmed for friendship.`);
       if (msg.includes('your')) message.channel.send(`${reply}I don't know. What is my purpose?`);
-    } else if (msg.includes('pass') || msg.includes('?')) {
+    } else if (msg.includes('pass') && msg.includes('butter')) {
       const gif = [
         'https://i.imgur.com/0CwnBuI.gifv',
         'https://i.imgur.com/LyMnpV0.gifv',
